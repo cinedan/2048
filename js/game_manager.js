@@ -68,11 +68,28 @@ GameManager.prototype.addStartTiles = function () {
 // Adds a tile in a random position
 GameManager.prototype.addRandomTile = function () {
   if (this.grid.cellsAvailable()) {
-    var value = Math.random() < 0.9 ? 2 : 4;
+    var numbob = Math.random();
+//    var value = numbob < 0.9 ? 2 : 4;
+    var value = numbob < 0.9 ? 2 : numbob >= 0.998 ? this.randPrime() : 4; //generate a random prime number approximately once in every 500th tile
     var tile = new Tile(this.grid.randomAvailableCell(), value);
 
     this.grid.insertTile(tile);
   }
+};
+
+GameManager.prototype.randPrime = function () {
+  var numbob = Math.trunc(Math.random() * 100);
+  var i = 3;
+  for (i = numbob; i > 3; i--) {
+    if(this.isPrime(i)){ break; }
+  }
+  return i;
+};
+
+GameManager.prototype.isPrime = function (num) {
+  for(var i = 2; i < num; i++)
+    if(num % i === 0) return false;
+  return num !== 1;
 };
 
 // Sends the updated grid to the actuator
