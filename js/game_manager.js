@@ -70,7 +70,7 @@ GameManager.prototype.addRandomTile = function () {
   if (this.grid.cellsAvailable()) {
     var numbob = Math.random();
 //    var value = numbob < 0.9 ? 2 : 4;
-    var value = numbob < 0.9 ? 2 : numbob >= 0.998 ? this.randPrime() : 4; //generate a random prime number approximately once in every 500th tile
+    var value = numbob < 0.1 ? 2 : numbob >= 0.5 ? this.randPrime() : 4; //generate a random prime number approximately once in every 500th tile
     var tile = new Tile(this.grid.randomAvailableCell(), value);
 
     this.grid.insertTile(tile);
