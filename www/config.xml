@@ -2,7 +2,7 @@
 <widget xmlns   = "http://www.2048.com/2048"
     xmlns:gap   = "http://2048.com/2048/1.0"
     id          = "com.2048.main"
-    versionCode = "1"
+    versionCode = "14"
     version     = "1.0.0" >
 
 <!-- versionCode is optional and Android only -->
