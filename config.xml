@@ -10,7 +10,7 @@
   <name>2048</name>
 
   <description>
-      <strong class="important">How to play:</strong> Use your <strong>arrow keys</strong> to move the tiles. When two tiles with the same number touch, they <strong>merge into one!</strong>
+      How to play: Use your arrow keys to move the tiles. When two tiles with the same number touch, they merge into one!
   </description>
 
   <icon src="icon.png" />
