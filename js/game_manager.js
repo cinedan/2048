@@ -70,26 +70,68 @@ GameManager.prototype.addRandomTile = function () {
   if (this.grid.cellsAvailable()) {
     var numbob = Math.random();
 //    var value = numbob < 0.9 ? 2 : 4;
-    var value = numbob < 0.1 ? 2 : numbob >= 0.5 ? this.randPrime() : 4; //generate a random prime number approximately once in every 500th tile
+//    var value = numbob < 0.9 ? 2 : numbob >= 0.995 ? this.randPrime() : 4; //generate a random prime number approximately once in every 500th tile
+    var value = numbob < this.primeGenerationProb() ? this.randPrime() : numbob < 0.9 ? 2 : 4; //generate a random prime number approximately once in every 500th tile
     var tile = new Tile(this.grid.randomAvailableCell(), value);
 
     this.grid.insertTile(tile);
   }
 };
 
+// Generates a random prime number for use in a cell
 GameManager.prototype.randPrime = function () {
   var numbob = Math.trunc(Math.random() * 100);
   var i = 3;
   for (i = numbob; i > 3; i--) {
-    if(this.isPrime(i)){ break; }
+//    if(this.isPrime(i)){
+//      if(this.primeNotInBoard(i)){ return i; }
+//    }
+    if(this.isPrime(i)){ return i; }
   }
-  return i;
+  return 3;
 };
 
+// Checks if the passed number is prime
 GameManager.prototype.isPrime = function (num) {
   for(var i = 2; i < num; i++)
     if(num % i === 0) return false;
   return num !== 1;
+};
+
+// checks to make sure the prime has not been generated before
+GameManager.prototype.primeNotInBoard = function (prime) {
+  var tile;
+
+  for (var x = 0; x < this.size; x++) {
+    for (var y = 0; y < this.size; y++) {
+      tile = this.grid.cellContent({ x: x, y: y });
+      if (Math.trunc(tile.value) == Math.trunc(prime)) { return false; }
+    }
+  }
+
+  return true;
+};
+
+// calculates the probability of the next generated tile being prime
+// probability increases as the sum of tiles in play approaches 2048 (i.e., the longer the game has been played)
+// probability is zero if sum of tiles is less than 512, probability maxes out at 1/8
+GameManager.prototype.primeGenerationProb = function () {
+  var prob = this.totalValueOfTiles() / 2048;
+  return (prob < 0.25) ? 0 : (prob < 1) ? (prob / 8) : (1 / 8);
+};
+
+// sum the value of all tiles currently in play
+GameManager.prototype.totalValueOfTiles = function () {
+  var tile;
+  var sum = 0;
+
+  for (var x = 0; x < this.size; x++) {
+    for (var y = 0; y < this.size; y++) {
+      tile = this.grid.cellContent({ x: x, y: y });
+      if (tile) { sum = sum + tile.value; }
+    }
+  }
+  return sum;
 };
 
 // Sends the updated grid to the actuator
