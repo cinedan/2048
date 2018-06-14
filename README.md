@@ -6,10 +6,10 @@ If you know people with an obsession for 2048 that has gotten out of hand then s
 Instead of just generating a *2 tile* or *4 tile*, around the time that the player has successfully generated the *512 tile* \(i.e., after the player has already committed enough time to become attached to the outcome of the game\) this version of 2048 will begin to generate tiles with random prime numbers!
 The probability of generating a prime-numbered tile continues to increase as gameplay continues!
 
-Try out the web version of this Prime 2048 code [here]()!
+Try out the web version of this Prime 2048 code [here](https://cinedan.github.io/2048-master_prank/index.html)!
 
-An apk for a (very) basic android port can be found [here]() in case you want to attempt to surreptitiously install it on your problem-friend's phone. \(You can extract the *.apk* file for yourself and verify that the source code is the same as the code present in this repository\!\)
-
+An apk for a (very) basic android port can be found [here](https://cinedan.github.io/2048-master_prank/android_apk/2048.apk) in case you want to attempt to surreptitiously install it on your problem-friend's phone. \(You can extract the *.apk* file for yourself and verify that the source code is the same as the code present in this repository\!\)
+This apk was tested on Android API level 24.
 
 ### Screenshot
 
@@ -22,5 +22,5 @@ An apk for a (very) basic android port can be found [here]() in case you want to
 
 
 
-/## Donations
-/If you feel like you enjoyed messing with your friends enough to buy me a drink then you can donate to my BTC address: `1Ec6onfsQmoP9kkL3zkpB6c5sA4PVcXU2i`. Thank you very much!
+//## Donations
+//If you feel like you enjoyed messing with your friends enough to buy me a drink then you can donate to my BTC address: `1Ec6onfsQmoP9kkL3zkpB6c5sA4PVcXU2i`. Thank you very much!
