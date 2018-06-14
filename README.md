@@ -14,13 +14,15 @@ This apk was tested on Android API level 24.
 ### Screenshot
 
 <p align="center">
-  <img src="https://cloud.githubusercontent.com/assets/1175750/8614312/280e5dc2-26f1-11e5-9f1f-5891c3ca8b26.png" alt="Screenshot"/>
+  <img src="https://cinedan.github.io/2048-master_prank/screenshot.png" alt="Prank 2048 Screenshot"/>
 </p>
 
 
 ### Technical Details
 
 
+<!---
+## Donations
+If you feel like you enjoyed messing with your friends enough to buy me a drink then you can donate to my BTC address: `1Ec6onfsQmoP9kkL3zkpB6c5sA4PVcXU2i`. Thank you very much!
+-->
 
-//## Donations
-//If you feel like you enjoyed messing with your friends enough to buy me a drink then you can donate to my BTC address: `1Ec6onfsQmoP9kkL3zkpB6c5sA4PVcXU2i`. Thank you very much!
